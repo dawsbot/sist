@@ -3,44 +3,11 @@
 [![Build Status](https://travis-ci.org/dawsonbotsford/sist.svg?branch=master)](https://travis-ci.org/dawsonbotsford/sist)
 [![npm download count](http://img.shields.io/npm/dm/sist.svg?style=flat)](http://npmjs.org/sist)
 
-> npm module to Print system information
+> npm cli to print system information
 
 <br>
 
 ## Install
-
-```
-npm install --save sist
-```
-
-
-<br>
-
-## Usage
-
-```js
-const sist = require('sist');
-
-sist('hackathons');
-//=> 'hackathons & rainbows'
-```
-
-
-<br>
-
-## API
-
-### sist(target)
-
-##### target
-
-Type: `string` || `Array`
-
-Print system information
-
-<br>
-
-## CLI
 
 ```
 $ npm install --global sist
@@ -50,16 +17,12 @@ $ npm install --global sist
 $ sist --help
 
   Usage
-    sist [input]
-
-  Options
-    --foo  Lorem ipsum. [Default: false]
+    sist
 
   Examples
     $ sist
-    hackathons & rainbows
-    $ sist ponies
-    ponies & rainbows
+    `node --version`: v5.6.0  
+    `npm -v`: 3.6.0
 
 <br>
 ```

@@ -3,7 +3,7 @@ var exec = require('child_process').exec;
 
 var datetime = new Date();
 let outputInfo = `Time created: ${datetime}  \n`;
-const toExec = ['node --version', 'npm -v'];
+const toExec = ['node --version', 'npm -v', 'whoami'];
 
 const shellExec = (childText, child, cb) => {
   child.stdout.on('data', function (data) {
