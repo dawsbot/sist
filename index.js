@@ -1,22 +1,34 @@
 'use strict';
-var exec = require('child_process').exec;
+var exec = require('child_process').execSync;
 
 var datetime = new Date();
-let outputInfo = `Time created: ${datetime}  \n`;
+let outputInfo = `sist creation date: ${datetime}  \n`;
 const toExec = ['node --version', 'npm -v', 'whoami'];
 
+let output = '';
 const shellExec = (childText, child, cb) => {
   child.stdout.on('data', function (data) {
-    outputInfo += `\`${childText}\`: ${data}  \n`;
+    output = `\`${childText}\`: ${data}  \n`;
   });
 
   child.on('close', function () {
-    cb(outputInfo);
+    cb(output);
   });
 };
 
 module.exports = function () {
-  for (let command of toExec) {
-    shellExec(command, exec(command), console.log);
-  }
+  const promises = toExec.map(command => {
+    return new Promise(resolve => {
+      shellExec(command, exec(command), response => {
+        outputInfo += response;
+        resolve();
+      });
+    });
+  });
+
+  Promise.all(promises)
+  .then(() => {
+    console.log(outputInfo);
+  })
+  .catch(console.error);
 };
