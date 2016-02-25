@@ -8,14 +8,10 @@ const cli = meow([
   'Usage',
   '  $ sist',
   '',
-  'Options',
-  '  --foo  Lorem ipsum. [Default: false]',
-  '',
   'Examples',
   '  $ sist',
-  '  unicorns & rainbows',
-  '  $ sist ponies',
-  '  ponies & rainbows'
+  '  `node --verson`: v5.6.0',
+  '  `npm -v`: v3.6.0'
 ]);
 
 updateNotifier({pkg: cli.pkg}).notify();
@@ -25,4 +21,4 @@ if (cli.input.length !== 0) {
   process.exit(1);
 }
 
-sist(console.log);
+sist();
