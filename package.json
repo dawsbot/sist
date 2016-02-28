@@ -2,7 +2,7 @@
   "name": "sist",
   "version": "0.0.0",
   "description": "Print system information",
-  "license": "WTFPL",
+  "license": "MIT",
   "homepage": "https://github.com/dawsonbotsford/sist#readme",
   "repository": {
     "type": "git",
