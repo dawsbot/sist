@@ -1,22 +1,23 @@
+/* eslint no-else-return:0 */
 'use strict';
-var exec = require('child_process').exec;
+const shell = require('shelljs');
 
 var datetime = new Date();
-let outputInfo = `Time created: ${datetime}  \n`;
-const toExec = ['node --version', 'npm -v', 'whoami'];
+let outputInfo = `[sist](https://github.com/dawsonbotsford/sist) output:\nTime created: ${datetime}  \n`;
+const toExec = ['node --version', 'npm -v'];
 
-const shellExec = (childText, child, cb) => {
-  child.stdout.on('data', function (data) {
-    outputInfo += `\`${childText}\`: ${data}  \n`;
-  });
-
-  child.on('close', function () {
-    cb(outputInfo);
-  });
+const shellExec = (command) => {
+  let executed = shell.exec(command, {silent: true});
+  if (executed.code === 0) {
+    return `\`${command}\`: ${executed.output}`;
+  } else {
+    return null;
+  }
 };
 
 module.exports = function () {
-  for (let command of toExec) {
-    shellExec(command, exec(command), console.log);
-  }
+  toExec.forEach(command => {
+    outputInfo += shellExec(command);
+  });
+  return outputInfo;
 };

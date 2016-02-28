@@ -21,4 +21,4 @@ if (cli.input.length !== 0) {
   process.exit(1);
 }
 
-sist();
+console.log(sist());
