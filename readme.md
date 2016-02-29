@@ -8,6 +8,12 @@
 
 <br>
 
+## Demo
+![demo](./demo.gif)
+
+
+<br>
+
 ## Install
 
 ```
@@ -36,6 +42,7 @@ Time created: Mon Feb 29 2016 00:14:54 GMT-0500 (EST)
 
 <br>
 
+---
 Sist outputs markdown. This means that it gets parsed beautifully in GitHub **issues**, **pull requests**, and **wiki's**.
 
 ### shell  
@@ -52,6 +59,7 @@ Time created: Mon Feb 29 2016 00:14:54 GMT-0500 (EST)
 
 <br>
 
+---
 Tell your users to create issues using sist by placing information in [.github/issue_template.md](.github/issue_template.md)
 
 <br>
