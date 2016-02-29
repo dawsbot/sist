@@ -3,7 +3,43 @@
 [![Build Status](https://travis-ci.org/dawsonbotsford/sist.svg?branch=master)](https://travis-ci.org/dawsonbotsford/sist)
 [![npm download count](http://img.shields.io/npm/dm/sist.svg?style=flat)](http://npmjs.org/sist)
 
-> npm cli to print system information
+> cli to print system information in markdown format
+
+<br>
+
+## Usage
+```
+$ sist
+
+### shell  
+`uname`: Darwin
+`echo $SHELL`: /bin/zsh
+`echo $TERM`: xterm-256color
+`echo $TERM_PROGRAM`: iTerm.app
+
+### node  
+`npm -v`: 3.6.0
+`node --version`: v5.6.0
+
+Time created: Mon Feb 29 2016 00:14:54 GMT-0500 (EST)
+
+```
+
+<br>
+
+Place the sist output <b>in a GitHub issue</b>:
+
+### shell  
+`uname`: Darwin  
+`echo $SHELL`: /bin/zsh  
+`echo $TERM`: xterm-256color  
+`echo $TERM_PROGRAM`: iTerm.app  
+
+### node  
+`npm -v`: 3.6.0  
+`node --version`: v5.6.0  
+
+Time created: Mon Feb 29 2016 00:14:54 GMT-0500 (EST)
 
 <br>
 
@@ -13,6 +49,9 @@
 $ npm install --global sist
 ```
 
+<br>
+
+## More help
 ```
 $ sist --help
 
@@ -21,11 +60,21 @@ $ sist --help
 
   Examples
     $ sist
-    `node --version`: v5.6.0  
-    `npm -v`: 3.6.0
+
+      ### shell  
+      `uname`: Darwin  
+      `echo $SHELL`: /bin/zsh  
+      `echo $TERM`: xterm-256color  
+      `echo $TERM_PROGRAM`: iTerm.app  
+
+      ### node  
+      `npm -v`: 3.6.0  
+      `node --version`: v5.6.0  
+
+      Time created: Mon Feb 29 2016 00:14:54 GMT-0500 (EST)
+```
 
 <br>
-```
 
 ## License
 
