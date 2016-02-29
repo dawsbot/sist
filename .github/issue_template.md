@@ -1,15 +1,16 @@
 ## My usage
 ```js
-<usage here>
+[usage here]
 ```
 
 <br>
 
 ## What I've tried
+[what you've tried here]
+
+<br>
 
 ## System info
 `sist` (Download sist [here](https://github.com/dawsonbotsford/sist)):
-```shell
-<sist command output here>
 
-```
+[sist command output here]

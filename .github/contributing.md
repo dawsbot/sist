@@ -25,4 +25,6 @@ npm test
 
 <br>
 
-If you have any doubts just reach out and so "oh hai". Cheers! :beers:
+If you have any doubts just reach out and so "oh hai".
+
+Cheers! :beers:
