@@ -24,7 +24,7 @@ $ npm install -g sist
 
 ## Usage
 ```
-$ sist
+$ sist shell node
 
 ### shell  
 `uname`: Darwin
@@ -69,22 +69,32 @@ Tell your users to create issues using sist by placing information in [.github/i
 $ sist --help
 
   Usage
-    sist
+    sist [languages]
 
   Examples
-    $ sist
+    $ sist ruby
+
+      [sist](https://github.com/dawsonbotsford/sist) output:
+
+      ### ruby  
+      `ruby --version`: ruby 2.2.1p85 (2015-02-26 revision 49769) [x86_64-darwin14]
+
+      Time created: Thu Mar 03 2016 12:48:02 GMT-0700 (MST)
+
+    $ sist shell go
+      [sist](https://github.com/dawsonbotsford/sist) output:
 
       ### shell  
-      `uname`: Darwin  
-      `echo $SHELL`: /bin/zsh  
-      `echo $TERM`: xterm-256color  
-      `echo $TERM_PROGRAM`: iTerm.app  
+      `uname`: Darwin
+      `echo $SHELL`: /bin/zsh
+      `echo $TERM`: xterm-256color
+      `echo $TERM_PROGRAM`: iTerm.app
+      `a`: `error, return code 127`
 
-      ### node  
-      `npm -v`: 3.6.0  
-      `node --version`: v5.6.0  
+      ### go  
+      `go --version`: `error, return code 127`
 
-      Time created: Mon Feb 29 2016 00:14:54 GMT-0500 (EST)
+      Time created: Thu Mar 03 2016 12:48:39 GMT-0700 (MST)
 ```
 
 <br>
