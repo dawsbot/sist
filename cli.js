@@ -6,10 +6,10 @@ const updateNotifier = require('update-notifier');
 
 const cli = meow([
   'Usage',
-  '  $ sist',
+  '  $ sist [languages]',
   '',
   'Examples',
-  '  $ sist',
+  '  $ sist shell node',
   '',
   '    ### shell',
   '    `uname`: Darwin',
@@ -30,9 +30,4 @@ const cli = meow([
 
 updateNotifier({pkg: cli.pkg}).notify();
 
-if (cli.input.length !== 0) {
-  console.error('Takes no input args');
-  process.exit(1);
-}
-
-console.log(sist());
+console.log(sist(cli.input));
