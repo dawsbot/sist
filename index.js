@@ -1,6 +1,8 @@
 /* eslint no-else-return:0, no-loop-func:0, guard-for-in:0 */
 'use strict';
 const shell = require('shelljs');
+var os = require('os');
+var win = require('winsys');
 
 let commands = {};
 commands.shell = ['uname', 'echo $SHELL', 'echo $TERM', 'echo $TERM_PROGRAM', 'a'];
@@ -19,9 +21,22 @@ const shellExec = (command) => {
   }
 };
 
+function checkOS() {
+  var sys = '\n### OS\n'
+  if (os.platform() === 'win32'){
+    var name = win();
+    sys += name['OS Name'][0]+'\n';
+  }
+  sys += os.type()+'\n';
+  sys += os.arch()+'\n';
+
+  return sys;
+}
+
 module.exports = function (args) {
   /* user wants a specific language type */
   if (args.length > 0) {
+    outputInfo += checkOS();
     for (let index in args) {
       const type = args[index];
       if (Object.keys(commands).indexOf(type) > -1) {
@@ -50,5 +65,5 @@ module.exports = function (args) {
       });
     }
   }
-  return outputInfo + `\nTime created: ${new Date()}`;
+  return outputInfo + `\nTime created: ${new Date()}\n\n### Description`;
 };
