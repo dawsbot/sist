@@ -3,7 +3,7 @@
 const shell = require('shelljs');
 
 let commands = {};
-commands.shell = ['uname', 'echo $SHELL', 'echo $TERM', 'echo $TERM_PROGRAM', 'a'];
+commands.shell = ['uname', 'echo $SHELL', 'echo $TERM', 'echo $TERM_PROGRAM'];
 commands.node = ['npm -v', 'node --version'];
 commands.ruby = ['ruby --version'];
 commands.go = ['go --version'];
@@ -20,6 +20,8 @@ const shellExec = (command) => {
 };
 
 module.exports = function (args) {
+  args = args || [];
+
   /* user wants a specific language type */
   if (args.length > 0) {
     for (let index in args) {
