@@ -22,13 +22,13 @@ const shellExec = (command) => {
 };
 
 function checkOS() {
-  var sys = '\n### OS\n'
-  if (os.platform() === 'win32'){
+  var sys = '\n### OS\n';
+  if (os.platform() === 'win32') {
     var name = win();
-    sys += name['OS Name'][0]+'\n';
+    sys += name['OS Name'][0] + '\n';
   }
-  sys += os.type()+'\n';
-  sys += os.arch()+'\n';
+  sys += os.type() + '\n';
+  sys += os.arch() + '\n';
 
   return sys;
 }
