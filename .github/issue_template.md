@@ -1,16 +1,6 @@
-## My usage
-```js
-[usage here]
-```
-
-<br>
-
-## What I've tried
-[what you've tried here]
-
-<br>
+[Tell the world about what's wrong here]
 
 ## System info
-`sist` (Download sist [here](https://github.com/dawsonbotsford/sist)):
+`sist node shell` (Download sist [here](https://github.com/dawsonbotsford/sist)):
 
 [sist command output here]
