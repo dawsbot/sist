@@ -1,6 +1,8 @@
 /* eslint no-else-return:0, no-loop-func:0, guard-for-in:0 */
 'use strict';
 const shell = require('shelljs');
+const chalk = require('chalk');
+const arrify = require('arrify');
 
 let commands = {};
 commands.shell = ['uname', 'echo $SHELL', 'echo $TERM', 'echo $TERM_PROGRAM'];
@@ -9,6 +11,11 @@ commands.ruby = ['ruby --version'];
 commands.go = ['go --version'];
 
 let outputInfo = '[sist](https://github.com/dawsonbotsford/sist) output:\n';
+
+const throwErr = (errMsg) => {
+  console.error(chalk.red(errMsg));
+  process.exit(1);
+};
 
 const shellExec = (command) => {
   let executed = shell.exec(command, {silent: true});
@@ -20,7 +27,8 @@ const shellExec = (command) => {
 };
 
 module.exports = function (args) {
-  args = args || [];
+  // args = args || [];
+  args = arrify(args);
 
   /* user wants a specific language type */
   if (args.length > 0) {
@@ -35,7 +43,7 @@ module.exports = function (args) {
           }
         });
       } else {
-        console.log('args NOT is contained in ');
+        throwErr(`arg "${type}" is not a sist supported type`);
       }
       /*
       */
