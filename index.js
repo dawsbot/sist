@@ -3,6 +3,8 @@
 const shell = require('shelljs');
 const chalk = require('chalk');
 const arrify = require('arrify');
+const os = require('os');
+const win = require('winsys');
 
 let commands = {};
 commands.shell = ['uname', 'echo $SHELL', 'echo $TERM', 'echo $TERM_PROGRAM'];
@@ -11,6 +13,7 @@ commands.ruby = ['ruby --version'];
 commands.go = ['go --version'];
 
 let outputInfo = '[sist](https://github.com/dawsonbotsford/sist) output:\n';
+outputInfo += checkOS();
 
 const throwErr = (errMsg) => {
   console.error(chalk.red(errMsg));
@@ -25,6 +28,18 @@ const shellExec = (command) => {
     return `\`${command}\`: \`error, return code ${executed.code}\`\n`;
   }
 };
+
+function checkOS() {
+  var sys = '\n### OS\n';
+  if (os.platform() === 'win32') {
+    var name = win();
+    sys += name['OS Name'][0] + '  \n';
+  }
+  sys += os.type() + '  \n';
+  sys += os.arch() + '  \n';
+
+  return sys;
+}
 
 module.exports = function (args) {
   // args = args || [];
@@ -60,5 +75,5 @@ module.exports = function (args) {
       });
     }
   }
-  return outputInfo + `\nTime created: ${new Date()}`;
+  return outputInfo + `\nTime created: ${new Date()}\n`;
 };
