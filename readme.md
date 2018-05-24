@@ -1,6 +1,6 @@
 # sist
 [![npm version](https://img.shields.io/npm/v/sist.svg)](https://www.npmjs.com/package/sist)
-[![Build Status](https://travis-ci.org/dawsonbotsford/sist.svg?branch=master)](https://travis-ci.org/dawsonbotsford/sist)
+[![Build Status](https://travis-ci.org/dawsbot/sist.svg?branch=master)](https://travis-ci.org/dawsbot/sist)
 [![npm download count](http://img.shields.io/npm/dm/sist.svg?style=flat)](http://npmjs.org/sist)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 
